@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인화면 실습</title>
+  <style>
+    div.container {
+      border: 1px solid #ccc;
+      width: 60%;
+      /* height: 90vh; */
+      font-size: small;
+      padding: 5px;
+    }
+
+    div.button {
+      /* text-align: center; */
+      width: 18%;
+      padding: 5px;
+      margin: 0 auto;
+    }
+
+    /* hr.border {
+      border: 2px solid blue;
+    } */
+
+    hr:nth-of-type(1) {
+      border: 2px solid blue;
+    }
+
+    hr:nth-last-of-type(1) {
+      border: 2px solid blue;
+    }
+
+    img {
+      width: 15px;
+    }
+
+    label {
+      display: inline-block;
+      width: 20%;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    select {
+      width: 50%;
+    }
+
+    input.tel {
+      width: 60px;
+    }
+
+    input[type="radio"] {
+      width: 30px;
+    }
+
+    label.office {
+      display: inline;
+    }
+
+    span {
+      font-size: small;
+    }
+
+    input.password {
+      background-color: yellow;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <div class="container">
+      <h3 style="padding-left: 20px;">일반회원 가입신청</h3>
+      <form action="index.html">
+        <hr class="border">
+        <label for="member_id"><img src="check.png" alt="체크박스 이미지">일반회원아이디</label>
+        <input type="text" id="member_id">
+        <button>중복아이디 검색</button>
+        <hr>
+        <label for="member_name"><img src="check.png" alt="체크박스 이미지">일반회원이름</label>
+        <input type="text" id="member_name">
+        <hr>
+        <label for="member_pw"><img src="check.png" alt="체크박스 이미지">비밀번호</label>
+        <input type="password" class="password" id="member_pw">
+        <span>
+          (8~20자의 영문대소문자, 숫자, 특수문자만 가능합니다.)
+        </span>
+        <hr>
+        <label for="member_pw_2"><img src="check.png" alt="체크박스 이미지">비밀번호확인</label>
+        <input type="password" class="password" id="member_pw_2">
+        <hr>
+        <label for="member_pw_hint"><img src="check.png" alt="체크박스 이미지">비밀번호힌트</label>
+        <select name="hint" id="member_pw_hint">
+          <option value="">---선택하세요---</option>
+          <option value="">어릴적 별명은?</option>
+          <option value="">태어난 도시는?</option>
+        </select>
+        <hr>
+        <label for="member_pw_answer"><img src="check.png" alt="체크박스 이미지">비밀번호정답</label>
+        <input type="text" id="member_pw_answer">
+        <hr>
+        <label for="member_tel_1">전화번호</label>
+        <input class="tel password" type="number" id="member_tel_1"> -
+        <input class="tel" type="number" id="member_tel_2"> -
+        <input class="tel" type="number" id="member_tel_3">
+        <hr>
+        <label for="member_hp">핸드폰번호</label>
+        <input type="number" id="member_hp">
+        <hr>
+        <label for="member_email"><img src="check.png" alt="체크박스 이미지">이메일주소</label>
+        <input type="email" id="member_email">
+        <hr>
+        <label><img src="check.png" alt="체크박스 이미지">소속정보</label>
+        <input type="radio" name="member_office_type" value="" id="member_office_1">
+        <label class="office" for="member_office_1">
+          일반기업
+        </label>
+        <input type="radio" name="member_office_type" value="" id="member_office_2">
+        <label class="office" for="member_office_2">
+          공공기관
+        </label>
+        <hr>
+        <label for="member_office"><img src="check.png" alt="체크박스 이미지">소속명</label>
+        <input type="text" id="member_office">
+        <hr>
+        <label for="member_post">우편번호</label>
+        <input type="number" id="member_post"> <button>검색</button>
+        <hr>
+        <label for="member_addr_1">주소</label>
+        <input style="width: 50%;" type="text" id="member_addr_1">
+        <hr>
+        <label for="member_addr_2">상세주소</label>
+        <input style="width: 50%;" type="text" id="member_addr_2">
+        <hr>
+        <label for="dn">인증서 DN</label>
+        <input type="number" id="dn"> <button>인증서 등록</button>
+        <span>
+          (공무원은 인증서 등록을 해 주시기 바랍니다.)
+        </span>
+        <hr>
+        <label for="">자기소개</label>
+        <textarea name="" id="" rows="5" cols="30"></textarea>
+
+        <hr class="border">
+        <div class="button">
+          <input type="submit" value="가입신청">
+          <input type="reset" value="취소">
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
