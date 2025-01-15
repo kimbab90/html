@@ -2,19 +2,19 @@
 
 //quiz_1
 
-// let num_1 = parseInt((Math.random() * 10) + 1);
-// let num_2 = parseInt((Math.random() * 10) + 1);
-// let num_3 = parseInt((Math.random() * 10) + 1);
+let num_1 = parseInt((Math.random() * 3) + 1);
+let num_2 = parseInt((Math.random() * 3) + 1);
+let num_3 = parseInt((Math.random() * 3) + 1);
 
-// console.log(num_1, num_2, num_3);
+console.log(num_1, num_2, num_3);
 
-// if (num_1 == num_2 && num_1 == num_3) {
-//     console.log(3);
-// } else if (num_1 == num_2 || num_1 == num_3 || num_2 == num_3) {
-//     console.log(2);
-// } else {
-//     console.log(0);
-// }
+if (num_1 == num_2 && num_1 == num_3) {
+    console.log(3);
+} else if (num_1 == num_2 || num_1 == num_3 || num_2 == num_3) {
+    console.log(2);
+} else {
+    console.log(0);
+}
 
 //quiz_2
 
