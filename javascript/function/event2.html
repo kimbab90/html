@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menu {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 20px;
+      margin: 10px;
+    }
+
+    #month_input {
+      padding: 5px 10px;
+      margin-right: 10px;
+    }
+
+    #print_button {
+      padding: 5px 10px;
+    }
+
+    caption {
+      font-style: bold;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    tr>th,
+    tr>td {
+      text-align: center;
+      padding: 5px 10px;
+      font-size: 1.1em;
+    }
+
+    tr>td {
+      border: 1px solid #fff;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="menu">
+    <input type="number" name="" id="month_input">
+    <button id="print_button">달력생성</button>
+  </div>
+  <div id="show"></div>
+  
+  <script>
+    function getDays(month = 1) {
+      if (month == 1) {
+        return 3;
+      } else if (month == 2 || month == 3) {
+        return 6;
+      } else if (month == 4) {
+        return 2;
+      } else if (month == 5) {
+        return 4;
+      }
+    }
+
+    function getLastDate(month = 1) {
+      if (month == 1 || month == 3 || month == 5) {
+        return 31;
+      } else if (month == 2) {
+        return 28;
+      } else if (month == 4) {
+        return 30;
+      }
+    }
+
+    function printCalendar(month = 1) {
+      let days = ['일', '월', '화', '수', '목', '금', '토'];
+
+      let html = '';
+      html += '<table style="border: 1px solid #333; border-radius: 10px">';
+      html += `<caption>${month}월</caption>`
+      html += '<thead><tr>';
+
+      for (let day of days) {
+        html += `<th>${day}</th>`;
+      }
+
+      html += '</tr></thead>';
+      html += '<tbody id="list">';
+
+      // for (let j = 0; j < 1; j++) {
+      //   html += '<tr>';
+
+      //   for (let i = 0; i < 7; i++) {
+      //     html += `<td>${j * 7 + (i+1)}</td>`;
+      //   }
+
+      //   html += '</tr>'
+      // }
+
+      // html += '<td></td>';
+      // html += '<td></td>';
+      // html += '<td></td>';
+
+      // for (let i = 0; i < 31; i++) {
+
+      //   if ((i + 4) % 7 == 0) {
+      //     html += `<td style="background-color:blue; color:white">${i+1}</td></tr><tr>`;
+      //   } else if ((i + 4) % 7 == 1) {
+      //     html += `<td style="background-color:red; color:white">${i+1}</td>`;
+      //   } else {
+      //     html += `<td>${i+1}</td>`;
+      //   }
+      // }
+
+      html += '<tr>';
+
+      let space = getDays(month);
+      let end = getLastDate(month);
+
+      for (let i = 0; i < (space + end); i++) {
+        let date = (i + 1) - space;
+        if (i < space) {
+          html += '<td></td>';
+        } else if (((i + 1)) % 7 == 0) {
+          html += `<td style="background-color:blue; color:white">${date}</td></tr><tr>`;
+        } else if (((i + 1)) % 7 == 1) {
+          html += `<td style="background-color:red; color:white">${date}</td>`;
+        } else {
+          html += `<td>${date}</td>`;
+        }
+      }
+
+      html += '</tr>';
+      html += '</tbody></table>'
+
+      document.querySelector('#show').innerHTML = html;
+    }
+
+    let print_button = document.querySelector('#print_button');
+
+    print_button.addEventListener('click', function () {
+      let month = document.querySelector('#month_input').valueAsNumber;
+      printCalendar(month);
+    });
+  </script>
+</body>
+
+</html>

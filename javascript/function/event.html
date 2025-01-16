@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+   <style>
+    #menu {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 5px 10px;
+    }
+
+    #number_input {
+      margin: 5px 10px;
+    }
+
+    #number_input:hover {
+      background-color: #eee;
+    }
+ 
+    #print_button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    #print_button:active {
+      background-color: #999;
+      color: #fff;
+    }
+
+    /* #show {
+      width: 80%;
+      min-height: 50vh;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      padding: 10px 20px;
+    } */
+
+   </style>
+</head>
+
+<body>
+  <div id="menu">
+    단: <input type="number" name="dan" id="number_input">
+    <button id="print_button">구구단 출력</button>
+  </div>
+  <div id="show">
+  </div>
+  <script src="event.js"></script>
+</body>
+
+</html>
