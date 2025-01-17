@@ -9,6 +9,7 @@
     table tr td {
       border: 1px solid black;
       padding: 20px;
+      text-align: center;
     }
 
     #show {
@@ -34,7 +35,7 @@
   <script>
     let run = document.querySelector('#run_button');
 
-    run.addEventListener('click', function() {
+    run.addEventListener('click', function () {
       let num1 = document.querySelector('#num_input_1').valueAsNumber;
       let num2 = document.querySelector('#num_input_2').valueAsNumber;
 
@@ -50,13 +51,21 @@
       html += '<tbody>';
       html += '<tr>';
 
-      for (let i = 0; i < num1 * num2; i++) {
-        if ((i + 1) % num2 == 0) {
-          html += `<td>${i + 1}</td></tr><tr>`;
+      for (let i = 1; i <= num1 * num2; i++) {
+        if (i % num2 == 0) {
+          html += `<td>${i}</td></tr><tr>`;
         } else {
-          html += `<td>${i + 1}</td>`;
+          html += `<td>${i}</td>`;
         }
       }
+
+      // for (let i = 0; i < num1 * num2; i++) {
+      //   if ((i + 1) % num2 == 0) {
+      //     html += `<td>${i + 1}</td></tr><tr>`;
+      //   } else {
+      //     html += `<td>${i + 1}</td>`;
+      //   }
+      // }
 
       html += '</tr>';
       html += '</tbody>';
